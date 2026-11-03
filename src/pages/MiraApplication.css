@@ -1,0 +1,127 @@
+.mira-application {
+  min-height: 100vh;
+  color: #1e293b;
+  background: #f7f9fc;
+  font-family: "DM Sans", sans-serif;
+}
+
+.mira-application-header {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 12px clamp(18px, 5vw, 64px);
+  border-bottom: 1px solid #e2e8f0;
+  background: #fff;
+}
+
+.mira-application-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.mira-application-brand > span:last-child {
+  display: grid;
+}
+
+.mira-application-brand strong {
+  color: #173b72;
+  font-size: 16px;
+}
+
+.mira-application-brand small {
+  margin-top: 2px;
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.mira-application-mark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #173b72;
+  background: #facc15;
+}
+
+.mira-back-button,
+.mira-dashboard-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #dbe4ef;
+  border-radius: 10px;
+  padding: 10px 14px;
+  color: #173b72;
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mira-back-button:hover,
+.mira-dashboard-link:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.mira-application-main {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: clamp(42px, 8vh, 82px) 0 56px;
+  text-align: center;
+}
+
+.mira-application-heading {
+  max-width: 650px;
+  margin: 0 auto 30px;
+}
+
+.mira-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+.mira-application-heading h1 {
+  margin: 12px 0 9px;
+  color: #173b72;
+  font-size: clamp(30px, 5vw, 44px);
+  letter-spacing: -1.5px;
+}
+
+.mira-application-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.mira-dashboard-link {
+  margin-top: 24px;
+  border-color: transparent;
+  background: #facc15;
+}
+
+@media (max-width: 620px) {
+  .mira-application-header {
+    min-height: 64px;
+    padding-inline: 16px;
+  }
+
+  .mira-application-main {
+    width: min(100% - 24px, 560px);
+    padding-top: 40px;
+  }
+}

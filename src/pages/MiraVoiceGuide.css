@@ -1,0 +1,406 @@
+.mira-voice-card {
+  width: min(560px, 100%);
+  margin: 0 auto;
+  padding: 22px;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(23, 59, 114, 0.07);
+  text-align: left;
+}
+
+.mira-voice-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mira-voice-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 12px;
+  color: #173b72;
+  background: #facc15;
+}
+
+.mira-voice-card-header > div {
+  display: grid;
+  gap: 4px;
+}
+
+.mira-voice-eyebrow {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.mira-voice-card-header strong {
+  color: #173b72;
+  font-size: 15px;
+}
+
+.mira-voice-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 7px 11px;
+  border: 1px solid #dbe4ef;
+  border-radius: 999px;
+  color: #475569;
+  background: #f8fafc;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mira-voice-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #94a3b8;
+}
+
+.mira-voice-status-listeningQuestion,
+.mira-voice-status-listeningWake {
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+  background: #eff6ff;
+}
+
+.mira-voice-status-listeningQuestion .mira-voice-dot,
+.mira-voice-status-listeningWake .mira-voice-dot {
+  background: #2563eb;
+}
+
+.mira-voice-status-processing,
+.mira-voice-status-connectingSpeech,
+.mira-voice-status-requestingPermission {
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+  background: #eff6ff;
+}
+
+.mira-voice-status-speaking {
+  border-color: #fde68a;
+  color: #92400e;
+  background: #fffbeb;
+}
+
+.mira-voice-status-permissionDenied,
+.mira-voice-status-microphoneUnavailable,
+.mira-voice-status-networkError,
+.mira-voice-status-browserUnsupported,
+.mira-voice-status-voiceUnavailable,
+.mira-voice-status-synthesisUnsupported,
+.mira-voice-status-speechError,
+.mira-voice-status-authenticationRequired,
+.mira-voice-status-aiUnavailable,
+.mira-voice-status-noSpeech {
+  border-color: #fecaca;
+  color: #991b1b;
+  background: #fef2f2;
+}
+
+.mira-voice-status-paused,
+.mira-voice-status-idle {
+  color: #475569;
+  background: #f1f5f9;
+}
+
+.mira-voice-status-paused .mira-voice-dot,
+.mira-voice-status-idle .mira-voice-dot {
+  background: #94a3b8;
+}
+
+.mira-voice-detail {
+  margin: 10px 0 0;
+  color: #991b1b;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.mira-voice-language {
+  display: grid;
+  gap: 6px;
+  margin-top: 14px;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mira-language-combobox {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mira-language-combobox > input {
+  min-height: 40px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #dbe4ef;
+  border-radius: 9px;
+  color: #1e293b;
+  background: #fff;
+  font: inherit;
+}
+
+.mira-language-combobox > input:focus {
+  border-color: #2563eb;
+  outline: 2px solid #bfdbfe;
+}
+
+.mira-language-combobox > svg {
+  position: absolute;
+  right: 12px;
+  color: #64748b;
+  pointer-events: none;
+}
+
+.mira-language-options {
+  position: absolute;
+  z-index: 5;
+  top: calc(100% + 5px);
+  right: 0;
+  left: 0;
+  max-height: 250px;
+  overflow: auto;
+  padding: 5px;
+  border: 1px solid #dbe4ef;
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: 0 12px 28px rgba(23, 59, 114, 0.14);
+}
+
+.mira-language-options button {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(75px, 1fr) 1.4fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 7px;
+  color: #334155;
+  background: transparent;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+}
+
+.mira-language-options button:hover,
+.mira-language-options button[aria-selected="true"] {
+  color: #173b72;
+  background: #eff6ff;
+}
+
+.mira-language-options button span:first-child {
+  font-weight: 700;
+}
+
+.mira-language-options button small {
+  color: #64748b;
+  font-size: 10px;
+}
+
+.mira-language-no-results {
+  margin: 0;
+  padding: 10px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.mira-language-capabilities {
+  display: grid;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.mira-language-capabilities > div {
+  display: grid;
+  grid-template-columns: 135px minmax(0, 1fr);
+  gap: 8px;
+  padding: 9px 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: #fbfdff;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.mira-language-capabilities strong {
+  color: #173b72;
+}
+
+.mira-language-capabilities span {
+  color: #64748b;
+}
+
+.mira-voice-transcript {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+
+.mira-voice-transcript p {
+  display: grid;
+  gap: 3px;
+  margin: 0;
+  color: #334155;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.mira-voice-transcript strong {
+  color: #173b72;
+}
+
+.mira-memory-review {
+  display: grid;
+  gap: 10px;
+  max-height: 360px;
+  overflow: auto;
+  margin-top: 14px;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.mira-memory-review > strong,
+.mira-memory-conversation time {
+  color: #173b72;
+  font-size: 12px;
+}
+
+.mira-memory-conversation {
+  display: grid;
+  gap: 7px;
+  padding: 10px;
+  border-radius: 9px;
+  background: #f8fafc;
+}
+
+.mira-memory-conversation p {
+  display: grid;
+  gap: 3px;
+  margin: 0;
+  color: #334155;
+  font-size: 12px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.mira-memory-conversation b {
+  color: #173b72;
+}
+
+.mira-voice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 15px;
+}
+
+.mira-voice-button {
+  display: inline-flex;
+  min-height: 40px;
+  flex: 1 1 135px;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 8px 11px;
+  border: 1px solid #dbe4ef;
+  border-radius: 10px;
+  color: #173b72;
+  background: #f8fafc;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mira-voice-button:hover:not(:disabled) {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.mira-voice-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.mira-voice-primary {
+  border-color: #2563eb;
+  color: #fff;
+  background: #2563eb;
+}
+
+.mira-voice-primary:hover:not(:disabled) {
+  color: #fff;
+  background: #1d4ed8;
+}
+
+.mira-voice-privacy {
+  margin: 14px 0 0;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.mira-voice-text-form {
+  display: grid;
+  gap: 7px;
+  margin-top: 17px;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.mira-voice-text-entry {
+  display: flex;
+  gap: 8px;
+}
+
+.mira-voice-text-entry input {
+  min-width: 0;
+  min-height: 40px;
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid #dbe4ef;
+  border-radius: 9px;
+  color: #1e293b;
+  background: #fff;
+  font: inherit;
+  font-weight: 400;
+}
+
+.mira-voice-text-entry input:focus {
+  border-color: #2563eb;
+  outline: 2px solid #bfdbfe;
+}
+
+.mira-voice-note {
+  margin: 0;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+@media (max-width: 620px) {
+  .mira-voice-card {
+    padding: 16px;
+  }
+
+  .mira-voice-text-entry {
+    flex-direction: column;
+  }
+}

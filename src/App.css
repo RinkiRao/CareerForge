@@ -1,0 +1,254 @@
+
+#root {
+  min-height: 100vh;
+}
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  background: #f5f7fa;
+}
+
+.app-sidebar {
+  width: 250px;
+  min-width: 250px;
+  background: #111827;
+  color: #e5e7eb;
+  padding: 28px 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 0 12px 30px;
+}
+
+.app-brand-mark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: #16a34a;
+  color: white;
+  border-radius: 12px;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.app-brand-name {
+  color: white;
+  font-size: 21px;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+}
+
+.app-nav-label {
+  margin: 18px 12px 10px;
+  color: #8792a5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.app-nav {
+  display: grid;
+  gap: 6px;
+}
+
+.app-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  color: #cbd5e1;
+  text-decoration: none;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 550;
+  transition: background 0.2s, color 0.2s;
+}
+
+.app-nav a:hover {
+  background: #253247;
+  color: white;
+}
+
+.app-nav a.active {
+  background: #166534;
+  color: white;
+}
+
+.app-sidebar-footer {
+  margin-top: auto;
+  padding: 18px 12px 0;
+  color: #94a3b8;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.app-main {
+  min-width: 0;
+  flex: 1;
+}
+
+.app-topbar {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 34px;
+  background: #fff;
+  border-bottom: 1px solid #e8edf3;
+}
+
+.app-topbar-title {
+  color: #111827;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.app-topbar-subtitle {
+  margin-top: 4px;
+  color: #718096;
+  font-size: 12px;
+}
+
+.app-avatar {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 800;
+}
+
+.app-content {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.page-heading {
+  margin: 0;
+  color: #111827;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.page-description {
+  margin: 9px 0 26px;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  background: #15803d;
+  color: white;
+  border: 0;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.primary-button:hover {
+  background: #166534;
+  transform: translateY(-1px);
+}
+
+.surface-card {
+  background: white;
+  border: 1px solid #e8edf3;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 3px 12px rgb(15 23 42 / 3%);
+}
+
+@media (max-width: 760px) {
+  .app-layout {
+    flex-direction: column;
+  }
+
+  .app-sidebar {
+    width: 100%;
+    min-width: 0;
+    padding: 16px;
+  }
+
+  .app-brand {
+    padding: 0 4px 14px;
+  }
+
+  .app-nav {
+    display: flex;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .app-nav a {
+    flex-shrink: 0;
+    padding: 10px;
+  }
+
+  .app-nav-label,
+  .app-sidebar-footer {
+    display: none;
+  }
+
+  .app-topbar {
+    min-height: 64px;
+    padding: 14px 18px;
+  }
+
+  .app-content {
+    padding: 22px 16px;
+  }
+}
+body {
+  background: #f5f7fa !important;
+}
+
+.app-sidebar {
+  background: #111827 !important;
+  color: white !important;
+}
+
+.dashboard-hero {
+  background: #14532d !important;
+  color: white !important;
+  padding: 40px !important;
+  border-radius: 20px !important;
+}
+.cf-profile-avatar {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #eaf1ff;
+  color: #173b72;
+  font-weight: 700;
+}
+
+.cf-profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

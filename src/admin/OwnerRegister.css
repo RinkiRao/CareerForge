@@ -1,0 +1,988 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+/* =========================================
+   CAREERFORGE OWNER REGISTER + LOGIN
+========================================= */
+
+:root {
+  --owner-navy: #082b59;
+  --owner-blue: #1688ed;
+  --owner-blue-dark: #086bc5;
+  --owner-light-blue: #eaf4ff;
+  --owner-background: #f2f7ff;
+  --owner-white: #ffffff;
+  --owner-yellow: #ffd43b;
+  --owner-text: #18375d;
+  --owner-muted: #71829a;
+  --owner-border: #e1eaf5;
+  --owner-green: #15845e;
+  --owner-red: #d63e4b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.owner-register-page {
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background: var(--owner-background);
+  color: var(--owner-text);
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+.owner-register-page button,
+.owner-register-page input,
+.owner-register-page select,
+.owner-register-page textarea {
+  font-family: inherit;
+}
+
+.owner-register-page button {
+  cursor: pointer;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.owner-register-page .owner-navbar {
+  width: 100%;
+  height: 74px;
+  min-height: 74px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: white;
+  border-bottom: 1px solid var(--owner-border);
+  position: relative;
+  z-index: 20;
+}
+
+.owner-register-page .owner-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--owner-navy);
+  font-size: 19px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.owner-register-page .owner-brand-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: var(--owner-yellow);
+  color: var(--owner-navy);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.owner-register-page .owner-back-link {
+  min-height: 39px;
+  padding: 0 14px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--owner-border);
+  border-radius: 9px;
+  background: white;
+  color: var(--owner-navy);
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.owner-register-page .owner-back-link:hover {
+  border-color: #b8d8f8;
+  background: var(--owner-light-blue);
+  color: var(--owner-blue-dark);
+}
+
+/* =========================================
+   PAGE LAYOUT
+========================================= */
+
+.owner-register-page .owner-layout {
+  width: 100%;
+  max-width: 1550px;
+  height: calc(100vh - 74px);
+  min-height: 0;
+  margin: 0 auto;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 0.78fr 1.22fr;
+  align-items: stretch;
+  gap: 27px;
+  overflow: hidden;
+}
+
+/* =========================================
+   LEFT STATIC SIDEBAR
+========================================= */
+
+.owner-register-page .owner-sidebar {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  padding: 48px 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: auto;
+  overflow: hidden;
+
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      circle at 90% 12%,
+      rgba(22, 136, 237, 0.45),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(255, 212, 59, 0.11),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #082b59 0%,
+      #0b477e 55%,
+      #0d65a9 100%
+    );
+
+  color: white;
+}
+
+/* Decorative circles */
+
+.owner-register-page .owner-sidebar::before,
+.owner-register-page .owner-sidebar::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.owner-register-page .owner-sidebar::before {
+  width: 360px;
+  height: 360px;
+  top: -165px;
+  right: -180px;
+
+  box-shadow:
+    0 0 0 28px rgba(255, 255, 255, 0.025),
+    0 0 0 58px rgba(255, 255, 255, 0.02);
+}
+
+.owner-register-page .owner-sidebar::after {
+  width: 250px;
+  height: 250px;
+  bottom: -145px;
+  left: -125px;
+
+  box-shadow:
+    0 0 0 30px rgba(255, 255, 255, 0.025);
+}
+
+.owner-register-page .owner-sidebar-content {
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Sidebar eyebrow */
+
+.owner-register-page .owner-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: var(--owner-yellow);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+}
+
+/* Sidebar heading */
+
+.owner-register-page .owner-sidebar h1 {
+  max-width: 440px;
+  margin: 0;
+  color: white;
+  font-size: clamp(30px, 3.4vw, 43px);
+  font-weight: 900;
+  line-height: 1.17;
+  letter-spacing: -1.4px;
+}
+
+.owner-register-page .owner-sidebar h1 span {
+  display: block;
+  color: #80c4ff;
+}
+
+.owner-register-page .owner-sidebar-content > p {
+  max-width: 420px;
+  margin: 19px 0 30px;
+  color: #d0e4f9;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* =========================================
+   SIDEBAR BENEFITS
+========================================= */
+
+.owner-register-page .owner-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.owner-register-page .owner-benefit {
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.075);
+  transition: 0.2s ease;
+}
+
+.owner-register-page .owner-benefit:hover {
+  background: rgba(255, 255, 255, 0.13);
+  transform: translateX(3px);
+}
+
+.owner-register-page .owner-benefit > span {
+  width: 39px;
+  height: 39px;
+  min-width: 39px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--owner-yellow);
+  color: var(--owner-navy);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.owner-register-page .owner-benefit strong {
+  display: block;
+  color: white;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.owner-register-page .owner-benefit small {
+  display: block;
+  margin-top: 5px;
+  color: #c3ddf5;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   RIGHT SIDE - INDEPENDENT SCROLL
+========================================= */
+
+.owner-register-page .owner-main {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  padding: 0 10px 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--owner-blue) var(--owner-light-blue);
+}
+
+.owner-register-page .owner-main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.owner-register-page .owner-main::-webkit-scrollbar-track {
+  background: var(--owner-light-blue);
+  border-radius: 10px;
+}
+
+.owner-register-page .owner-main::-webkit-scrollbar-thumb {
+  background: var(--owner-blue);
+  border-radius: 10px;
+}
+
+.owner-register-page .owner-main::-webkit-scrollbar-thumb:hover {
+  background: var(--owner-blue-dark);
+}
+
+/* =========================================
+   WHITE FORM CARD
+========================================= */
+
+.owner-register-page .owner-form-card {
+  width: 100%;
+  max-width: 850px;
+  min-width: 0;
+  flex-shrink: 0;
+  margin-bottom: 15px;
+  padding: 34px;
+
+  border: 1px solid var(--owner-border);
+  border-radius: 17px;
+  background: white;
+
+  box-shadow:
+    0 12px 38px rgba(8, 43, 89, 0.07);
+}
+
+/* =========================================
+   FORM HEADING
+========================================= */
+
+.owner-register-page .owner-form-heading {
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--owner-border);
+}
+
+.owner-register-page .owner-form-heading .owner-eyebrow {
+  margin-bottom: 9px;
+  color: var(--owner-blue);
+}
+
+.owner-register-page .owner-form-heading h2 {
+  margin: 0;
+  color: var(--owner-navy);
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -0.6px;
+}
+
+.owner-register-page .owner-form-heading p {
+  margin: 9px 0 0;
+  color: var(--owner-muted);
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   RESPONSE MESSAGE
+========================================= */
+
+.owner-register-page .owner-message {
+  margin-top: 19px;
+  padding: 12px 13px;
+  display: block;
+  border: 1px solid var(--owner-border);
+  border-radius: 9px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.owner-register-page .owner-message.info {
+  border-color: #c7e1fb;
+  background: var(--owner-light-blue);
+  color: #1769ad;
+}
+
+.owner-register-page .owner-message.success {
+  border-color: #bce8d3;
+  background: #eafaf1;
+  color: var(--owner-green);
+}
+
+.owner-register-page .owner-message.error {
+  border-color: #f3c7cb;
+  background: #fff0f1;
+  color: var(--owner-red);
+}
+
+/* =========================================
+   FORM SECTIONS
+========================================= */
+
+.owner-register-page .owner-section {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--owner-border);
+}
+
+.owner-register-page .owner-section h3 {
+  margin: 0 0 18px;
+  padding-left: 12px;
+  border-left: 3px solid var(--owner-yellow);
+  color: var(--owner-navy);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.owner-register-page .owner-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.owner-register-page .owner-field {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.owner-register-page .owner-full {
+  grid-column: 1 / -1;
+}
+
+.owner-register-page .owner-field label {
+  color: var(--owner-text);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.owner-register-page .owner-field input,
+.owner-register-page .owner-field select {
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  padding: 0 13px;
+
+  border: 1px solid #dce6f1;
+  border-radius: 9px;
+  outline: none;
+
+  background: #fbfdff;
+  color: var(--owner-text);
+
+  font-size: 11px;
+  font-weight: 500;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.owner-register-page .owner-field input::placeholder {
+  color: #9baabd;
+  font-size: 10px;
+}
+
+.owner-register-page .owner-field input:focus,
+.owner-register-page .owner-field select:focus {
+  border-color: var(--owner-blue);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(22, 136, 237, 0.1);
+}
+
+.owner-register-page .owner-field input[readonly] {
+  background: #f4f8fd;
+  color: var(--owner-muted);
+  cursor: default;
+}
+
+.owner-register-page .owner-field small {
+  display: block;
+  margin-top: 2px;
+  color: var(--owner-muted);
+  font-size: 9px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   PHONE INPUT
+========================================= */
+
+.owner-register-page .owner-phone-input {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+}
+
+.owner-register-page .owner-phone-input select {
+  width: 85px;
+  min-width: 85px;
+  height: 44px;
+  padding: 0 9px;
+
+  border: 1px solid #dce6f1;
+  border-radius: 9px;
+
+  background: #fbfdff;
+  color: var(--owner-navy);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.owner-register-page .owner-phone-input select:focus {
+  border-color: var(--owner-blue);
+  outline: none;
+}
+
+.owner-register-page .owner-phone-input input {
+  flex: 1;
+  min-width: 0;
+}
+
+/* =========================================
+   PASSWORD INPUT
+========================================= */
+
+.owner-register-page .owner-password-wrapper {
+  width: 100%;
+  min-height: 46px;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #dce6f1;
+  border-radius: 9px;
+  background: #fbfdff;
+
+  transition: 0.2s ease;
+}
+
+.owner-register-page .owner-password-wrapper:focus-within {
+  border-color: var(--owner-blue);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(22, 136, 237, 0.1);
+}
+
+.owner-register-page .owner-password-wrapper input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  padding: 0 60px 0 13px;
+
+  border: none;
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.owner-register-page .owner-password-wrapper input:focus {
+  border: none;
+  box-shadow: none;
+}
+
+.owner-register-page .owner-password-wrapper button {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  padding: 8px 5px;
+  border: none;
+  background: transparent;
+
+  color: var(--owner-blue-dark);
+  font-size: 10px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.owner-register-page .owner-password-wrapper button:hover {
+  color: #b08316;
+}
+
+/* =========================================
+   EMAIL AND MOBILE VERIFICATION
+========================================= */
+
+.owner-register-page .owner-verify-row {
+  width: 100%;
+  margin-top: 13px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.owner-register-page .owner-verify-row input {
+  height: 44px;
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  padding: 0 13px;
+
+  border: 1px solid #dce6f1;
+  border-radius: 9px;
+  outline: none;
+
+  background: #f4f8fd;
+  color: var(--owner-muted);
+  font-size: 10px;
+}
+
+.owner-register-page .owner-secondary-btn {
+  min-height: 44px;
+  padding: 0 14px;
+  flex-shrink: 0;
+
+  border: 1px solid #b8d8f8;
+  border-radius: 9px;
+
+  background: var(--owner-light-blue);
+  color: var(--owner-blue-dark);
+
+  font-size: 10px;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.owner-register-page .owner-secondary-btn:hover {
+  background: var(--owner-blue);
+  color: white;
+  border-color: var(--owner-blue);
+}
+
+/* =========================================
+   SECURITY AGREEMENT
+========================================= */
+
+.owner-register-page .owner-terms {
+  margin: 22px 0;
+  padding: 13px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  border: 1px solid #f3e6b2;
+  border-radius: 9px;
+  background: #fff9e4;
+
+  cursor: pointer;
+}
+
+.owner-register-page .owner-terms input {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  margin: 2px 0 0;
+
+  accent-color: var(--owner-blue);
+  cursor: pointer;
+}
+
+.owner-register-page .owner-terms span {
+  color: #775f14;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.owner-register-page .owner-submit-btn {
+  width: 100%;
+  min-height: 49px;
+  padding: 12px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: var(--owner-blue);
+  color: white;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  box-shadow: 0 6px 16px rgba(22, 136, 237, 0.2);
+
+  transition: 0.2s ease;
+}
+
+.owner-register-page .owner-submit-btn:hover {
+  background: var(--owner-blue-dark);
+  box-shadow: 0 8px 19px rgba(22, 136, 237, 0.27);
+  transform: translateY(-2px);
+}
+
+.owner-register-page .owner-submit-btn:active {
+  transform: translateY(0);
+}
+
+.owner-register-page .owner-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================================
+   REGISTER / LOGIN SWITCH
+========================================= */
+
+.owner-register-page .owner-login-link {
+  margin: 18px 0 0;
+  color: var(--owner-muted);
+  text-align: center;
+  font-size: 10px;
+}
+
+.owner-register-page .owner-login-link a,
+.owner-register-page .owner-login-link button {
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  color: var(--owner-blue);
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 800;
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.owner-register-page .owner-login-link a:hover,
+.owner-register-page .owner-login-link button:hover {
+  color: var(--owner-blue-dark);
+  text-decoration: underline;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) and (min-width: 781px) {
+  .owner-register-page .owner-layout {
+    grid-template-columns: 0.7fr 1.3fr;
+    padding: 23px;
+    gap: 18px;
+  }
+
+  .owner-register-page .owner-sidebar {
+    padding: 35px 25px;
+  }
+
+  .owner-register-page .owner-sidebar h1 {
+    font-size: 30px;
+  }
+
+  .owner-register-page .owner-form-card {
+    padding: 27px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 780px) {
+  .owner-register-page {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .owner-register-page .owner-navbar {
+    height: 66px;
+    min-height: 66px;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+  }
+
+  .owner-register-page .owner-layout {
+    height: auto;
+    min-height: calc(100vh - 66px);
+    padding: 17px;
+    grid-template-columns: 1fr;
+    gap: 17px;
+    overflow: visible;
+  }
+
+  .owner-register-page .owner-sidebar {
+    position: relative;
+    top: auto;
+    height: auto;
+    min-height: auto;
+    padding: 28px 25px;
+    overflow: hidden;
+  }
+
+  .owner-register-page .owner-sidebar h1 {
+    max-width: 500px;
+    font-size: 30px;
+  }
+
+  .owner-register-page .owner-sidebar-content > p {
+    margin: 13px 0 20px;
+    font-size: 11px;
+  }
+
+  .owner-register-page .owner-benefits {
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .owner-register-page .owner-benefit {
+    padding: 11px;
+  }
+
+  .owner-register-page .owner-main {
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  .owner-register-page .owner-form-card {
+    max-width: none;
+    padding: 25px;
+    margin-bottom: 20px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+  .owner-register-page .owner-navbar {
+    padding: 0 14px;
+  }
+
+  .owner-register-page .owner-brand {
+    gap: 8px;
+    font-size: 16px;
+  }
+
+  .owner-register-page .owner-brand-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+  }
+
+  .owner-register-page .owner-back-link {
+    min-height: 36px;
+    padding: 0 9px;
+    font-size: 10px;
+  }
+
+  .owner-register-page .owner-layout {
+    padding: 12px;
+  }
+
+  .owner-register-page .owner-sidebar {
+    padding: 25px 20px;
+    border-radius: 13px;
+  }
+
+  .owner-register-page .owner-sidebar h1 {
+    font-size: 28px;
+  }
+
+  .owner-register-page .owner-form-card {
+    padding: 19px 15px;
+    border-radius: 13px;
+  }
+
+  .owner-register-page .owner-form-heading h2 {
+    font-size: 21px;
+  }
+
+  .owner-register-page .owner-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .owner-register-page .owner-full {
+    grid-column: auto;
+  }
+
+  .owner-register-page .owner-verify-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .owner-register-page .owner-verify-row input,
+  .owner-register-page .owner-secondary-btn {
+    width: 100%;
+  }
+
+  .owner-register-page .owner-section {
+    padding: 20px 0;
+  }
+
+  .owner-register-page .owner-terms {
+    padding: 11px;
+  }
+
+  .owner-register-page .owner-terms span {
+    font-size: 9px;
+  }
+
+  .owner-register-page .owner-submit-btn {
+    min-height: 46px;
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   VERY SMALL SCREENS
+========================================= */
+
+@media (max-width: 360px) {
+  .owner-register-page .owner-navbar {
+    padding: 0 10px;
+  }
+
+  .owner-register-page .owner-brand {
+    font-size: 14px;
+  }
+
+  .owner-register-page .owner-back-link {
+    font-size: 9px;
+  }
+
+  .owner-register-page .owner-form-card {
+    padding: 16px 12px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .owner-register-page *,
+  .owner-register-page *::before,
+  .owner-register-page *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
